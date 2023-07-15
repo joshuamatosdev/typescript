@@ -6,8 +6,11 @@ import {spaceShipWithoutName} from "./omit";
 import {add, spaceJump} from "./functionTypes";
 import {spaceJumpPartial} from "./partials";
 import {brokenStraightSword, getWeaponTotalDamage, moonlightGreatsword, riversOfBlood} from "./generics";
+import {helloWorld} from "./functionOverloading";
 
 export const keyValueMap: any = {
+    "function overload": helloWorld("Bob"),
+    "function overload #2": helloWorld("Bob", "Awesome"),
     "Pick": spaceshipName,
     "Required": spaceRequiredSpaceShip,
     "Optional": optionalSpaceShip,

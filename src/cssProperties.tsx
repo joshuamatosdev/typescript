@@ -1,6 +1,6 @@
 import {CSSProperties} from "react";
 
-export const customStyle: CSSProperties = {
+export const cssProperties: CSSProperties = {
         boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
         textAlign: "center",
         padding: "15px",
