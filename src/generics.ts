@@ -1,19 +1,33 @@
-export function grabItemFrom<T>(array: T[], at: number = 0): T {
-    return array[at];
+type Weapon = {
+    damage: number;
+    scaling: string;
+    weight?: number;
+    range?: number;
+    skill?: string;
 }
 
-export const numbers: number[] = [42, 7, 12];
-export const strings: string[] = ["Hello", "TypeScript", "Generics"];
+export const weapon = {
+    damage: 100,
+    scaling: "A",
+}
 
-export const firstNumber = grabItemFrom(numbers, 1);
-export const firstString= grabItemFrom(strings, 2);
+export function getWeaponTotalDamage<T extends Weapon>({damage, scaling}: T): {
+    damage: number;
+    scaling: string;
+} {
+    return {
+        damage,
+        scaling,
+    }
+}
+
+export const riversOfBlood: Weapon = getWeaponTotalDamage({damage: 100, scaling: "A"});
+export const moonlightGreatsword: Weapon = getWeaponTotalDamage({damage: 200, scaling: "S"});
+export const brokenStraightSword: Weapon = getWeaponTotalDamage({damage: 10, scaling: "E"});
 
 
-export type Person = { name: string; age: number; };
-export const people: Person[] = [
-    {name: "Alice", age: 30},
-    {name: "Bob", age: 25},
-];
 
-export const firstPerson = grabItemFrom(people, 1);
+
+
+
 
